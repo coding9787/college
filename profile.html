@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form{
+            margin: 3%;
+            border: 5px solid;
+            border-color: black;
+        }
+        .center{
+            text-align: center;
+            margin: 2%;
+            
+        }
+        .center label{
+            font-size: larger;
+            font-weight: bold;
+            font-style: italic;
+        }
+        .center input{
+            padding: 1%;
+            font-size: large;
+        }
+        .cent{
+            text-align: center;
+        }
+        .cent .hili{
+            font-weight: bold;
+            font-style: italic;
+            font-size: larger;
+        }
+        .cent input{
+            margin: 2%;
+            padding: 1%;
+            
+        }
+        .butpanel{
+            text-align: center;
+            margin: 5%;
+          
+        }
+        .butpanel button{
+            padding: 2%;
+            padding-left: 5%;
+            padding-right: 5%;
+            background-color: aqua;
+            border-radius: 25px;
+            box-shadow: inset;
+            margin: 5%;
+            text-align: center;
+            font-size: large;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+
+        }
+           .butpanel input{
+            padding: 2%;
+            padding-left: 5%;
+            padding-right: 5%;
+            background-color: aqua;
+            border-radius: 25px;
+            box-shadow: inset;
+            margin: 5%;
+            text-align: center;
+            font-size: large;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+
+        }
+        .pannel{
+            margin: 1%;
+
+            text-align: center;
+            padding-top: 1%;
+            padding-bottom: 1%;
+            background-color: rgb(177, 171, 171);
+            color: white;
+            
+        }
+        .pannel span{
+            color: rgb(224, 67, 27);
+            
+        }
+       
+        
+    </style>
+</head>
+<body>
+    <div>
+        <div class="form">
+            <form id="formid">
+                <div class="pannel"><h1><span>Edit your Profile</span></h1></div>
+                <div class="center"><Label for="firstname"> First Name: </Label><input type="text"  id="fname" placeholder=" First Name "></div><br>
+                <div class="center"><Label for="lastname"> Last Name: </Label><input type="text" placeholder=" Last Name " id="lname"></div><br>
+                <div class="center"><Label for="password">  Password: </Label><input type="password"  id="password" placeholder=" Password "></div><br>
+                
+                <div class="center"><Label for="email"> Gmail: </Label><input type="email" placeholder=" Enter your Gmail " id="gmail"></div><br>
+                <div class="center"><Label for="phonenumber"> Phone Number: </Label><input size="10" min="1000000000" max="10000000000" type="number" placeholder=" Phone Number " id="number"></div><br>
+                <div class="center"><Label for="dob"> Dob: </Label><input type="date" placeholder=" Enter your Dob " id="dob"></div><br>
+                <div class="cent"><Label for="gender" class="hili"> Gender: </Label><br>
+                    <span><label>Male </label><input type="radio" name="gender" value="Male" id="gender">
+                    <label>Female </label><input type="radio" name="gender" value="Female" id="gender">
+                    <label>Other </label><input type="radio" name="gender" value="Other" id="gender"></span>
+                </div><br>
+                <div class="cent"><Label for="address" class="hili"> Address: </Label><br>
+                    <label> Street: </label><input type="text" placeholder=" street " id="street">
+                    <label> City: </label><input type="text" placeholder=" city " id="city"><br>
+                    <label> District: </label><input type="text" placeholder=" district " id="district">
+                    <label> State: </label><input type="text" placeholder=" state " id="state"><br>
+                    <label> Country: </label><input type="text" placeholder=" country " id="country">
+                    <label> Pincode: </label><input min="100000" max="999999" type="number" placeholder=" EX:625401 " id="pincode">
+                </div><br>
+                <div class="butpanel">
+                    <button value="Submit" id="signup" >Submit</button>
+                    <input type="reset" value="Reset">
+                </div>
+
+
+
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
+        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyBCe69pxxRjaQtmqLuYgkKqdkTB4-S4Ei8",
+          authDomain: "webauth-75203.firebaseapp.com",
+          databaseURL: "https://webauth-75203-default-rtdb.firebaseio.com",
+          projectId: "webauth-75203",
+          storageBucket: "webauth-75203.appspot.com",
+          messagingSenderId: "1075319863945",
+          appId: "1:1075319863945:web:04159513c2e9d2bbe32458",
+          measurementId: "G-SF3TWZ4QV2"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const db = getDatabase(app);
+        const firstname=document.getElementById("fname");
+        const lastname=document.getElementById('lname');
+        const userNumber=document.getElementById("number");
+        const userPassword=document.getElementById("password");
+        const userDob=document.getElementById("dob");
+        const userEmail=document.getElementById("gmail");
+        const userForm=document.getElementById("formid");
+        console.log(app);
+
+        //Writing data on database
+        function writeUserData(usernumber, username, useremail, userdob, userpassword) {
+  
+            set(ref(db, 'users/' + usernumber), {
+                Name: username,
+                Password: userpassword,
+                Email: useremail,
+                Phonenumber: usernumber,
+                Dob: userdob
+
+
+            });
+        }
+        writeUserData("9787452790","Arirama Selvam M","blackarch9787@gmail.com","2004-07-08","M.Harish9787");
+        userForm.onsubmit=()=>{
+            var fname=firstname.value;
+            var lname=lastname.value;
+            var name=fname+" "+lname;
+            alert(name);
+            var password=userPassword.value;
+            var email=userEmail.value;
+            var dob=userDob.value;
+            var phonenumber=userNumber.value;
+           writeUserData(phonenumber,name,email,dob,password);
+
+         
+
+        }
+      
+
+
+
+
+
+
+
+
+      </script>
+    
+</body>
+</html>
