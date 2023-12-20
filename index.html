@@ -5,34 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criminal CSE-2022</title>
     <style>
-        .list{
-            list-style-position: inside;
+        .formclass{
+            background-color: rgb(225, 225, 231);
+            margin: 5%;
             
         }
+        .profilemsg{
+            margin: 3%;
+            
+            background-color: beige;
+            
+
+            color: orange;
+            }
+            .h1{
+                margin-left: 35%;
+            }
+        .form{
+            margin: 5%;
+            margin-left: 10%;
+            font-size: x-large;
+     
+        }
+        input{
+            padding: 1.5%;
+            width: 30%;
+        }
+
     </style>
 </head>
 <body>
     <div style="background-color: rgb(235, 232, 232); border-radius: 2%;"><center> <h1>Welcome to <span style="color: orangered;">Criminal</span>-CSE(2022)</h1><span>(Created by Appatakkers Group)</span></center></div>
     <div></div>
     <div>
-        <div id="list">
-            <li>Home</li>
-            <li>CSE Community</li>
-            <li>Mech Community</li>
-            <li>Civil Community</li>
-            <li>EEE Community</li>
-            <li>ECE Community</li>
-            <li>Dr.G.U.pope Community</li>
-
-        </div>
-        <div>
-            <form action="" id="userform">
-                <input type="text" name="" id="name" placeholder="Enter your name">
-                <input type="number" name="" id="phonenumber" placeholder="Enter your phone number">
-                <input type="password" name="" id="password" placeholder="Enter your password">
-                <input type="date" name="" id="dob" placeholder="Enter your DOB">
-                <input type="email" name="" id="gmail" placeholder="Enter your Gmail">
-                <input type="submit">
+  
+        <div id="formid" class="formclass">
+            <div class="profilemsg"><h1 class="h1">Edit Your Profile</h1></div>
+            <form action="" id="userform" class="form">
+                <label for="name">User Name: </label><input type="text" name="" id="name" placeholder="Enter your name"><br>
+                <br><label for="phonenumber">Phone Number: </label><input type="number" name="" id="phonenumber" placeholder="Enter your phone number"><br>
+                <br><label for="password">Password: </label><input type="password" name="" id="password" placeholder="Enter your password"><br>
+                <br><label for="dob"></label>DOB: <input type="date" name="" id="dob" placeholder="Enter your DOB"><br>
+                <br><label for="gmail">Gmail: </label><input type="email" name="" id="gmail" placeholder="Enter your Gmail"><br>
+                <br><input type="submit" value="Submit">
         </form></div>
         <div>
             <table>
