@@ -91,7 +91,7 @@
 <body>
     <div>
         <div class="form">
-            <form id="formid">
+            <form id="formid" action="Home.html">
                 <div class="pannel"><h1><span>Edit your Profile</span></h1></div>
                 <div class="center"><Label for="firstname"> First Name: </Label><input type="text"  id="fname" placeholder=" First Name "></div><br>
                 <div class="center"><Label for="lastname"> Last Name: </Label><input type="text" placeholder=" Last Name " id="lname"></div><br>
@@ -174,8 +174,12 @@
 
 
             });
+           
+            
         }
         writeUserData("9787452790","Arirama Selvam M","blackarch9787@gmail.com","2004-07-08","M.Harish9787");
+           
+        
         userForm.onsubmit=()=>{
             var fname=firstname.value;
             var lname=lastname.value;
@@ -185,7 +189,8 @@
             var email=userEmail.value;
             var dob=userDob.value;
             var phonenumber=userNumber.value;
-           writeUserData(phonenumber,name,email,dob,password);
+            writeUserData(phonenumber,name,email,dob,password);
+           
 
          
 
