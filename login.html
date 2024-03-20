@@ -119,7 +119,7 @@ measurementId: "G-SF3TWZ4QV2"
           createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
             const user = userCredential.user;
             alert("created New user account successfully....");
-            window.location.href="profile.html";
+            window.location.href="index.html";
           })
           .catch((error) => {
             const errorCode = error.code;
@@ -134,7 +134,7 @@ measurementId: "G-SF3TWZ4QV2"
           var username=document.getElementById("username").value;
           signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
             const user = userCredential.user;
-            window.location.href="Home.html";
+            window.location.href="home.html";
           })
           .catch((error) => {
             const errorCode = error.code;

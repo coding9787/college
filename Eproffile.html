@@ -91,7 +91,7 @@
 <body>
     <div>
         <div class="form">
-            <form id="formid" action="Home.html">
+            <form id="formid">
                 <div class="pannel"><h1><span>Edit your Profile</span></h1></div>
                 <div class="center"><Label for="firstname"> First Name: </Label><input type="text"  id="fname" placeholder=" First Name "></div><br>
                 <div class="center"><Label for="lastname"> Last Name: </Label><input type="text" placeholder=" Last Name " id="lname"></div><br>
@@ -160,10 +160,12 @@
         const userDob=document.getElementById("dob");
         const userEmail=document.getElementById("gmail");
         const userForm=document.getElementById("formid");
+        const btn=document.getElementById("signup");
         console.log(app);
+        
 
         //Writing data on database
-        function writeUserData(usernumber, username, useremail, userdob, userpassword) {
+        function writeUserData(usernumber, username, useremail, userdob, userpassword){
   
             set(ref(db, 'users/' + usernumber), {
                 Name: username,
@@ -177,24 +179,39 @@
            
             
         }
+        
         writeUserData("9787452790","Arirama Selvam M","blackarch9787@gmail.com","2004-07-08","M.Harish9787");
-           
+        
         
         userForm.onsubmit=()=>{
             var fname=firstname.value;
             var lname=lastname.value;
             var name=fname+" "+lname;
-            alert(name);
+            console.log(name);
             var password=userPassword.value;
             var email=userEmail.value;
             var dob=userDob.value;
             var phonenumber=userNumber.value;
             writeUserData(phonenumber,name,email,dob,password);
+          
            
 
          
 
         }
+        btn.addEventListener("click",(e)=>{
+            if (userNumber,userEmail=="") {
+                window.location.href="Home.html";
+                
+            }
+            else{
+                alert("Please enter valid datas");
+            }
+            
+        })
+        
+
+
       
 
 
