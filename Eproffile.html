@@ -97,7 +97,7 @@
                 <div class="center"><Label for="lastname"> Last Name: </Label><input type="text" placeholder=" Last Name " id="lname"></div><br>
                 <div class="center"><Label for="password">  Password: </Label><input type="password"  id="password" placeholder=" Password "></div><br>
                 
-                <div class="center"><Label for="email"> Gmail: </Label><input type="email" placeholder=" Enter your Gmail " id="gmail"></div><br>
+                <div class="center"><Label for="email"> Gmail: </Label><input required type="email" placeholder=" Enter your Gmail " id="gmail"></div><br>
                 <div class="center"><Label for="phonenumber"> Phone Number: </Label><input size="10" min="1000000000" max="10000000000" type="number" placeholder=" Phone Number " id="number"></div><br>
                 <div class="center"><Label for="dob"> Dob: </Label><input type="date" placeholder=" Enter your Dob " id="dob"></div><br>
                 <div class="cent"><Label for="gender" class="hili"> Gender: </Label><br>
@@ -114,7 +114,7 @@
                     <label> Pincode: </label><input min="100000" max="999999" type="number" placeholder=" EX:625401 " id="pincode">
                 </div><br>
                 <div class="butpanel">
-                    <button value="Submit" id="signup" >Submit</button>
+                    <button value="Submit" id="signup"  >Submit</button>
                     <input type="reset" value="Reset">
                 </div>
 
@@ -193,22 +193,20 @@
             var dob=userDob.value;
             var phonenumber=userNumber.value;
             writeUserData(phonenumber,name,email,dob,password);
+           
+         
+         
+
+                
+            
           
            
 
          
 
-        }
-        btn.addEventListener("click",(e)=>{
-            if (userNumber,userEmail=="") {
-                window.location.href="Home.html";
-                
-            }
-            else{
-                alert("Please enter valid datas");
-            }
-            
-        })
+        };
+     
+      
         
 
 
@@ -220,7 +218,7 @@
 
 
 
-
+        
       </script>
     
 </body>
