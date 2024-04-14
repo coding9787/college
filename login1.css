@@ -68,13 +68,17 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    transition: height .2s ease ;
+  
+
 
 }
-.wrapper .formbox{
+.wrapper .loginBox{
     width: 100%;
     padding: 40px;
 }
-.formbox h2{
+.loginBox h2{
     font-size: 2em;
     color:#162918;
     text-align: center;
@@ -151,4 +155,43 @@ body{
 }
 .loginRegister p a:hover{
     text-decoration: underline;
+}
+.wrapper .closeIcon{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #162938;
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+
+}
+.wrapper .loginBox{
+    transition: transform 1s ease;
+    transform: translateX(0);
+}
+.wrapper.active .loginBox{
+    transition: none;
+    transform: translateX(-400px);
+}
+.wrapper.active .registerBox{
+    transition: transform 1s ease;
+    transform: translateX(0);
+    
+}
+.wrapper .registerBox{
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+.wrapper.active{
+    height: 520px;
+
 }
