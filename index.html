@@ -50,11 +50,11 @@
     <div style="background-color: rgb(235, 232, 232); border-radius: 2%;"><center> <h1>Welcome to <span style="color: orangered;">Criminal</span>-CSE(2022)</h1><span>(Created by Appatakkers Group)</span></center></div>
     <div>
         <center><ul>
-           <a href="login.html"><li>Student</li></a>
-           <a href="login.html"><li>Professor</li></a>
-          <a href="login.html"><li>Office</li></a> 
-          <a href="login.html"><li>Manager</li></a> 
-           <a href="login.html"><li>Programmer</li></a>
+           <a href="login1.html"><li>Student</li></a>
+           <a href="login1.html"><li>Professor</li></a>
+          <a href="login1.html"><li>Office</li></a> 
+          <a href="login1.html"><li>Manager</li></a> 
+           <a href="login1.html"><li>Programmer</li></a>
             
         </ul></center>
     </div>
@@ -68,76 +68,6 @@
 
 
 
-<!--
 
-  <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
-        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: "AIzaSyBCe69pxxRjaQtmqLuYgkKqdkTB4-S4Ei8",
-          authDomain: "webauth-75203.firebaseapp.com",
-          databaseURL: "https://webauth-75203-default-rtdb.firebaseio.com",
-          projectId: "webauth-75203",
-          storageBucket: "webauth-75203.appspot.com",
-          messagingSenderId: "1075319863945",
-          appId: "1:1075319863945:web:04159513c2e9d2bbe32458",
-          measurementId: "G-SF3TWZ4QV2"
-        };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-        const db = getDatabase(app);
-        const userName=document.getElementById("name");
-        const userNumber=document.getElementById("phonenumber");
-        const userPassword=document.getElementById("password");
-        const userDob=document.getElementById("dob");
-        const userEmail=document.getElementById("gmail");
-        const userForm=document.getElementById("userform");
-        console.log(app);
-
-        //Writing data on database
-        function writeUserData(usernumber, username, useremail, userdob, userpassword) {
-  
-            set(ref(db, 'users/' + usernumber), {
-                Name: username,
-                Password: userpassword,
-                Email: useremail,
-                Phonenumber: usernumber,
-                Dob: userdob
-
-
-            });
-        }
-        writeUserData("9787452790","Arirama Selvam M","blackarch9787@gmail.com","08:07:2004","M.Harish9787");
-        userForm.onsubmit=()=>{
-            var name=userName.value;
-            var password=userPassword.value;
-            var email=userEmail.value;
-            var dob=userDob.value;
-            var phonenumber=userNumber.value;
-           writeUserData(phonenumber,name,email,dob,password);
-
-         
-
-        }
-      
-
-
-
-
-
-
-
-
-      </script>
--->
 </body>
 </html>
