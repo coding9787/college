@@ -6,15 +6,10 @@
     <title>CSE Login1.com</title>
     <link rel="stylesheet" href="login1.css">
 
-
-  
-
-
-
 </head>
 <body>
     <header>
-        <h2 class="logo"><marquee><span class="title">Blackdevil</span>.Com</marquee></h2>
+        <h2 class="logo"><marquee><span class="title">Criminal Cse(2022)</span>.Com</marquee></h2>
         <nav class="navigation">
             <a href="home.html">Home</a>
             <a href="about.html">About</a>
@@ -128,13 +123,6 @@ measurementId: "G-SF3TWZ4QV2"
 
 };
 
-
-// Initialize Firebase
-
-
-
-       
-
       
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
@@ -146,17 +134,18 @@ measurementId: "G-SF3TWZ4QV2"
           var email=document.getElementById("emailC").value;
           var password=document.getElementById("passwordC").value;
           var username=document.getElementById("usernameC").value;
-          alert(auth);
+          console.log(auth);
          
           createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
             const user = userCredential.user;
-            alert("created New user account successfully....");
+            console.log("created New user account successfully....");
             window.location.href="index.html";
           })
           .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             alert(errorMessage);
+            console.log(errorMessage)
           });
         })
         // Login to new usert account ... 
@@ -166,24 +155,20 @@ measurementId: "G-SF3TWZ4QV2"
         
           signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
             const user = userCredential.user;
-            alert("successfully loggedin");
+            console.log("successfully loggedin");
             window.location.href="home.html";
           })
           .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            console.log(errorMessage);
-          
-          
-           
+            alert(errorMessage);
+            console.log(errorMessage)
           
             
           });
 
         })
     
-        
-
         
       </script>
 
