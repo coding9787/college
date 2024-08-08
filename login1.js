@@ -40,11 +40,15 @@ loginlink.addEventListener('click',()=>{
 //login button onclick show popup window
 btnpopup.addEventListener('click',()=>{
     wrapper.classList.add('active-popup');
+
+    
+    
     
 });
 //close icon onclick remove popup window
 closeIcon.addEventListener('click',()=>{
     wrapper.classList.remove('active-popup');
+    window.location.reload();
     
 });
 
